@@ -39,4 +39,26 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  OmniAuth.config.test_mode = true
+  
+  OmniAuth.config.mock_auth[:twitter] = OmniAuth::AuthHash.new(
+    {
+      uid: '12345',
+      info:  { name: 'mockuser'},
+      extra: { access_token: { token: "a token", secret: "a secret"} }
+    })
+
+  OmniAuth.config.mock_auth[:facebook] = OmniAuth::AuthHash.new(
+    {
+      uid: '123545',
+      user_info: {
+        email: 'mockuser@example.com',
+        name: 'Mock User',
+        first_name: 'Mock',
+        last_name: "User",
+        image: "...",
+        }
+    })
+
 end

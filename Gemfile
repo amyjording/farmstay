@@ -8,9 +8,10 @@ end
 ruby "2.3.3"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.5'
-# Use sqlite3 as the database for Active Record
-# gem 'sqlite3'
 gem 'pg'
+gem 'devise'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -29,7 +30,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '3.1.11'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -38,7 +39,7 @@ group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'capybara-email'
-  gem 'factory_bot'
+  gem 'factory_bot_rails'
   gem 'faker'
   gem 'database_cleaner', '1.6.1'
   gem 'letter_opener'
