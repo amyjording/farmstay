@@ -31,6 +31,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '3.1.11'
+gem 'webdrivers', '~> 3.0'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -41,7 +42,7 @@ group :development, :test do
   gem 'capybara-email'
   gem 'factory_bot_rails'
   gem 'faker'
-  gem 'database_cleaner', '1.6.1'
+  gem 'database_cleaner', '~> 1.6.1.0'
   gem 'letter_opener'
   gem 'rspec-rails'
   gem 'pry'
@@ -50,7 +51,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'simple_bdd'
   gem 'shoulda-matchers'
-  gem 'spring' 
+  gem 'spring'
 end
 
 group :development do

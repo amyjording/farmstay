@@ -10,6 +10,32 @@ require 'rails_helper'
 	    expect(page).to have_content("Welcome! You have signed up successfully.")
 	  end
 
+	  scenario "Farmie registers with Facebook", js: true do
+	  	visit root_path
+	  	expect(page).to have_text("Welcome to Farm Stay!")
+	  	click_link "Join Farm Stay!"
+	  	click_link "Sign in with Facebook"
+	  	connect_with_facebook
+	  	expect(page).to have_text("Welcome to Farm Stay!")
+	  	expect(page).to have_link "Sign out"
+	  	farmie = Farmie.last
+	  	expect(farmie.provider).to eq 'facebook' #check with your mockups in Devise
+	  	expect(farmie.uid).to eq '123545'
+	  end
+
+	  scenario "Farmie registers with Twitter", js: true do
+	  	visit root_path
+	  	expect(page).to have_text("Welcome to Farm Stay!")
+	  	click_link "Join Farm Stay!"
+	  	click_link "Sign in with Facebook"
+	  	connect_with_facebook
+	  	expect(page).to have_text("Welcome to Farm Stay!")
+	  	expect(page).to have_link "Sign out"
+	  	farmie = Farmie.last
+	  	expect(farmie.provider).to eq 'facebook' #check with your mockups in Devise
+	  	expect(farmie.uid).to eq '123545'
+	  end
+
 	  def fill_in_registration_fields
 	    fill_in "farmie[first_name]", with: Faker::Name.first_name 
 	    fill_in "farmie[last_name]", with: Faker::Name.last_name 
@@ -18,4 +44,12 @@ require 'rails_helper'
 	    fill_in "farmie[password_confirmation]", with: 'passweird1234'
 	    click_button "Sign up"
 	  end
+
+	  def connect_with_facebook
+			OmniAuth.config.mock_auth[:facebook]
+		end
+
+		def connect_with_twitter
+			OmniAuth.config.mock_auth[:twitter]
+		end
 	end

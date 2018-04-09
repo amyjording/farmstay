@@ -11,8 +11,16 @@
   <body>
   	<p class="notice"><%= notice %></p>
   	<p class="alert"><%= alert %></p>
-  	<%= link_to('Sign in', new_farmie_session_path) %>
-    <%= link_to('Join Farm Stay!', new_farmie_registration_path) %>
+    <% if farmie_signed_in? %>
+      <li>
+        <%= link_to('Sign out', destroy_farmie_session_path, method: :delete) %>        
+      </li>
+    <% else %>
+      <li>
+        <%= link_to('Sign in', new_farmie_session_path) %>
+        <%= link_to('Join Farm Stay!', new_farmie_registration_path) %>
+      </li>
+    <% end %>
     <%= yield %>
   </body>
 </html>
