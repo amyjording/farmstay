@@ -39,6 +39,10 @@ RSpec.configure do |config|
 
   end
 
+  config.include Warden::Test::Helpers
+    config.before :suite do 
+      Warden.test_mode!
+  end
   #Capybara.register_driver :selenium do |app|  
   #  require 'selenium/webdriver'  
   #  Selenium::WebDriver::Firefox::Binary.path = "C:/Users/ADMIN/the_odin_project/Rails/Firefox52"  

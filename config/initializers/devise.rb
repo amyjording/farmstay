@@ -259,7 +259,7 @@ Devise.setup do |config|
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
 
   config.omniauth :facebook, ENV['facebook_api_key'], ENV['facebook_api_secret'], scope: 'public_profile,email', image_size: 'square', display: 'popup'
-  config.omniauth :twitter, ENV['twitter_api_key'], ENV['twitter_api_secret'], scope: 'public_profile,email', image_size: 'square', display: 'popup'
+  #config.omniauth :instagram, ENV['instagram_api_key'], ENV['instagram_api_secret'], scope: 'public_profile,email', image_size: 'square', display: 'popup'
 
 
   # ==> Warden configuration

@@ -20,9 +20,9 @@ feature "signing in" do
 		OmniAuth.config.mock_auth[:facebook]
 	end
 
-	def connect_with_twitter
-		OmniAuth.config.mock_auth[:twitter]
-	end
+#	def connect_with_twitter
+#		OmniAuth.config.mock_auth[:twitter]
+#	end
 
 	scenario "visiting the site to sign in" do
 		visit root_path
@@ -39,17 +39,17 @@ feature "signing in" do
 		click_link "Sign in with Facebook"
 		
 		connect_with_facebook
-		expect(page).to have_content("Signed in successfully.")
+		expect(page).to have_content("Successfully authenticated from Facebook account.")
 	end
 
-	scenario "visiting the site to sign in with twitter" do
-		visit root_path
-		click_link "Sign in"
-		click_link "Sign in with Twitter"
+#	scenario "visiting the site to sign in with twitter" do
+#		visit root_path
+#		click_link "Sign in"
+#		click_link "Sign in with Twitter"
 		
-		connect_with_twitter
-		expect(page).to have_content("Signed in successfully.")
-	end
+#		connect_with_twitter
+#		expect(page).to have_content("Signed in successfully.")
+#	end
 
 	context 'sees failure message' do
 	  scenario "when entering wrong password" do

@@ -10,7 +10,7 @@ ruby "2.3.3"
 gem 'rails', '~> 5.1.5'
 gem 'pg'
 gem 'devise'
-gem 'omniauth-twitter'
+gem 'omniauth-instagram'
 gem 'omniauth-facebook'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'

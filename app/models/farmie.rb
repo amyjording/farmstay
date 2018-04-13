@@ -1,8 +1,11 @@
 class Farmie < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
+
+  has_one :profile
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :omniauthable, omniauth_providers: [:facebook, :twitter]
+         :recoverable, :rememberable, :trackable, :validatable, 
+         :omniauthable, omniauth_providers: [:facebook, :twitter]
+  after_create :build_profile
+         
   validates_presence_of :first_name, :last_name
   validates :email, presence: true, length: { maximum: 255 }
 
@@ -14,5 +17,9 @@ class Farmie < ApplicationRecord
 	    member.last_name = auth.user_info.last_name
 	  end
 	end
+
+  def build_profile
+    Profile.create(farmie: self)
+  end
 
 end

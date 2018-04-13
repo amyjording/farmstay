@@ -1,0 +1,24 @@
+
+<h2>Your Profile</h2>
+
+<%= form_for [@farmie, @profile] do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <%= f.label :name, "Display name" %>
+  <%= f.text_field :name, value: @farmie.first_name %>
+
+  <%= f.label :intro, "Your introduction" %>
+  <%= f.text_field :intro, class: 'form-control' %>
+
+  <%= f.label :about, "A little more about you" %>
+  <%= f.text_field :about, class: 'form-control' %>
+
+  <p>Show farms you've visited?</p>
+  <%= f.label :show_visited_farms, "Yes", value: true %>
+  <%= f.radio_button :show_visited_farms, true, checked: :false, value: :true %>
+
+  <%= f.label :show_visited_farms, "No", value: false %>
+  <%= f.radio_button :show_visited_farms, false, checked: :true, value: :false %>
+
+    <%= f.submit "Update profile" %>
+  <% end %>
