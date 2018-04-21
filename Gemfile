@@ -33,8 +33,11 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '3.1.11'
 gem 'webdrivers', '~> 3.0'
 
+gem 'carrierwave', '1.2.2'
+gem 'mini_magick', '4.7.0'
+gem "aws-sdk-s3"
 # Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+# gem 'capistrano-rails'
 
 group :development, :test do
   gem 'better_errors'
@@ -52,6 +55,10 @@ group :development, :test do
   gem 'simple_bdd'
   gem 'shoulda-matchers'
   gem 'spring'
+  gem 'capistrano', '~> 3.10.1'
+  gem 'capistrano-rails'
+  gem 'capistrano-passenger'
+  gem 'capistrano-figaro-yml', '~> 1.0.2'
 end
 
 group :development do
@@ -59,5 +66,8 @@ group :development do
   gem 'web-console', '>= 3.3.0'
 end
 
+group :production do
+  gem 'fog-aws'
+end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

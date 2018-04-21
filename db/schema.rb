@@ -10,10 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180411003304) do
+ActiveRecord::Schema.define(version: 20180421011314) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "btree_gin"
 
   create_table "farmies", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -43,6 +44,10 @@ ActiveRecord::Schema.define(version: 20180411003304) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "show_visited_farms", default: false
+    t.string "picture"
+    t.string "anonymous_picture", default: "farmer-penguin.jpg"
+    t.text "farm_pictures", default: [], array: true
+    t.index ["farm_pictures"], name: "index_profiles_on_farm_pictures", using: :gin
   end
 
 end

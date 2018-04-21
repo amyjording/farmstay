@@ -29,6 +29,12 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
 
+  config.after(:each) do
+    if Rails.env.test? || Rails.env.cucumber?
+      FileUtils.rm_rf(Dir["#{Rails.root}/spec/support/uploads"])
+    end
+  end
+  
   config.include SimpleBdd, type: :feature
 
   Shoulda::Matchers.configure do |config|
@@ -85,4 +91,9 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
 
   config.filter_rails_from_backtrace!
+
+  config.after(:suite) do
+    FileUtils.rm_rf(Dir["#{Rails.root}/spec/test_files/"])
+  end
+
 end

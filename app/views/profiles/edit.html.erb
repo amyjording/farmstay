@@ -4,6 +4,10 @@
 <%= form_for [@farmie, @profile] do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
 
+    <%= @profile.picture? ? image_tag(@profile.picture.url) : image_tag("farmer-penguin.jpg", size: 50) %>
+
+  <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+
   <%= f.label :name, "Display name" %>
   <%= f.text_field :name, value: @farmie.first_name %>
 
@@ -14,11 +18,14 @@
   <%= f.text_field :about, class: 'form-control' %>
 
   <p>Show farms you've visited?</p>
+
   <%= f.label :show_visited_farms, "Yes", value: true %>
-  <%= f.radio_button :show_visited_farms, true, checked: :false, value: :true %>
+    <%= f.radio_button :show_visited_farms, true, checked: @profile.show_visited_farms? %>
 
   <%= f.label :show_visited_farms, "No", value: false %>
-  <%= f.radio_button :show_visited_farms, false, checked: :true, value: :false %>
+  <%= f.radio_button :show_visited_farms, false, checked: !!@profile.show_visited_farms? %>
+
+  <%= f.file_field :farm_pictures, multiple: true, accept: 'image/jpeg,image/gif,image/png' %>
 
     <%= f.submit "Update profile" %>
   <% end %>
