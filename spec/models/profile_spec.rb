@@ -14,5 +14,6 @@ RSpec.describe Profile, type: :model do
 
   describe "associations" do
   	it {should belong_to(:farmie)}
+    it {should have_many(:farmie_pictures)}
   end
 end

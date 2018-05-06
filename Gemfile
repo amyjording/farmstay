@@ -47,7 +47,7 @@ group :development, :test do
   gem 'faker'
   gem 'database_cleaner', '~> 1.6.1.0'
   gem 'letter_opener'
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 3.7'
   gem 'pry'
   gem 'pry-nav'
   gem 'pry-rails', '~> 0.3.2'

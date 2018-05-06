@@ -12,6 +12,7 @@ require 'shoulda/matchers'
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
+  #config.include ActionDispatch::TestProcess
 
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
@@ -29,11 +30,11 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
 
-  config.after(:each) do
-    if Rails.env.test? || Rails.env.cucumber?
-      FileUtils.rm_rf(Dir["#{Rails.root}/spec/support/uploads"])
-    end
-  end
+ # config.after(:each) do
+ #   if Rails.env.test? || Rails.env.cucumber?
+ #     FileUtils.rm_rf(Dir["#{Rails.root}/spec/fixtures"])
+ #   end
+ # end
   
   config.include SimpleBdd, type: :feature
 
@@ -49,22 +50,6 @@ RSpec.configure do |config|
     config.before :suite do 
       Warden.test_mode!
   end
-  #Capybara.register_driver :selenium do |app|  
-  #  require 'selenium/webdriver'  
-  #  Selenium::WebDriver::Firefox::Binary.path = "C:/Users/ADMIN/the_odin_project/Rails/Firefox52"  
-  #  Capybara::Selenium::Driver.new(app, :browser => :firefox)
-  #end
-
- # Capybara.register_driver :selenium do |app|
- #   browser_options = ::Selenium::WebDriver::Firefox::Options.new()
- #   browser_options.args << '--headless'
-
-#    Capybara::Selenium::Driver.new(
-#      app,
-#      browser: :firefox,
-#      options: browser_options
-#    )
-#   end
 
   OmniAuth.config.test_mode = true
   
