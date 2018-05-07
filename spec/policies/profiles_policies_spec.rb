@@ -1,4 +1,4 @@
-require 'rails/helper'
+require 'rails_helper'
 
 describe ProfilePolicy do
   subject { described_class }
@@ -12,4 +12,5 @@ describe ProfilePolicy do
         expect(subject).not_to permit(farmie, profile)
       end
     end
+  end
 end

@@ -1,4 +1,4 @@
-=begin FactoryBot.define do
+FactoryBot.define do
   factory :profile do
     intro Faker::Lorem.sentence(3, true, 10)
     about Faker::Lorem.paragraph(2, true, 4)
@@ -12,4 +12,3 @@ FactoryBot.define do
     picture File.open(File.join(Rails.root, 'spec', 'fixtures', 'files', 'profile_pic.jpg'))
   end
 end
-=end

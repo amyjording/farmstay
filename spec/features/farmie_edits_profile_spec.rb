@@ -26,9 +26,6 @@ feature "farmie profiles" do
 		expect(page).to have_content("Profile updated")
 		profile = Profile.last
 		expect(profile.show_visited_farms).to eq true
-    binding.pry
-    expect(profile).to have_attributes(picture: 'profile_pic.jpg')    
-    expect(farmie.profile.farmie_pictures).to eq(['garden.jpg', 'toads.jpg'])
   end
 
 end
