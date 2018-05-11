@@ -1,14 +1,17 @@
+require 'rails_helper'
+require 'carrierwave'
 require 'carrierwave/test/matchers'
+require 'carrierwave/orm/activerecord'
 
-describe "PictureUploader" do
+describe PictureUploader do
   include CarrierWave::Test::Matchers
 
-  let(:farmie) { double('user') }
-  let(:uploader) { PictureUploader.new(user, :picture) }
+  let(:farmie) { double('farmie') }
+  let(:uploader) { PictureUploader.new(farmie, :picture) }
 
   before do
     PictureUploader.enable_processing = true
-    File.open(path_to_file) { |f| uploader.store!(f) }
+    File.open(Rails.root.join("spec/fixtures/files/toads.jpg")) { |f| uploader.store!(f) }
   end
 
   after do

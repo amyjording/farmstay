@@ -32,8 +32,9 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '3.1.11'
-gem 'webdrivers', '~> 3.0'
+#gem 'webdrivers', '~> 3.0'
 
+gem "shrine", "~> 2.0"
 gem 'carrierwave', '1.2.2'
 gem 'mini_magick', '4.7.0'
 gem "aws-sdk-s3"
@@ -52,7 +53,7 @@ group :development, :test do
   gem 'pry'
   gem 'pry-nav'
   gem 'pry-rails', '~> 0.3.2'
-  gem 'selenium-webdriver'
+  gem 'selenium-webdriver', '~> 3.12'
   gem 'simple_bdd'
   gem 'shoulda-matchers'
   gem 'spring'
@@ -60,6 +61,7 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano-passenger'
   gem 'capistrano-figaro-yml', '~> 1.0.2'
+  gem 'rails-controller-testing'
 end
 
 group :development do

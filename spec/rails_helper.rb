@@ -36,6 +36,7 @@ RSpec.configure do |config|
  #     FileUtils.rm_rf(Dir["#{Rails.root}/spec/fixtures"])
  #   end
  # end
+  include ActionDispatch::TestProcess
   
   config.include SimpleBdd, type: :feature
 

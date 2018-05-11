@@ -6,7 +6,7 @@
 
     <%= @profile.picture? ? image_tag(@profile.picture.url) : image_tag("farmer-penguin.jpg", size: 50) %>
 
-  <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+  <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', name: "yourprofilepicture" %>
 
   <%= f.label :name, "Display name" %>
   <%= f.text_field :name, value: @farmie.first_name %>
