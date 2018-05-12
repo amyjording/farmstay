@@ -36,7 +36,7 @@ describe ProfilePolicy do
 
     permissions :edit?, :update?, :destroy? do
       it "grants access if profile belongs to farmie" do
-        expect(subject).to permit(farmie,farmie.profile)#, Profile.create!(farmie_id: farmie.id))
+        expect(subject).to permit(farmie, farmie.profile)#, Profile.create!(farmie_id: farmie.id))
       end
     end
   end
