@@ -9,6 +9,7 @@ require 'capybara/rspec'
 require 'simple_bdd'
 require 'shoulda/matchers'
 require 'pundit/rspec'
+require 'carrierwave/test/matchers'
 
 ActiveRecord::Migration.maintain_test_schema!
 
