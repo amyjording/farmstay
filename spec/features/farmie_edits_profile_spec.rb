@@ -11,7 +11,7 @@ feature "farmie profiles" do
       run_callbacks: :false)
 
     PictureUploader.enable_processing = true
-    File.open("C:/Users/ADMIN/the_odin_project/Rails/farmstay/spec/fixtures/files/profile_pic.jpg") { |f| uploader.store!(f) }
+    File.open(File.join(Rails.root,'spec', 'fixtures', 'files', 'profile_pic.jpg')) { |f| uploader.store!(f) }
   end
 
   after do
