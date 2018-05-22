@@ -6,7 +6,7 @@
 
     <%= @profile.picture? ? image_tag(@profile.picture.url) : image_tag("farmer-penguin.jpg", size: 50) %>
 
-  <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', name: "yourprofilepicture" %>
+  <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
 
   <%= f.label :name, "Display name" %>
   <%= f.text_field :name, value: @farmie.first_name %>
@@ -25,13 +25,5 @@
   <%= f.label :show_visited_farms, "No", value: false %>
   <%= f.radio_button :show_visited_farms, false, checked: !!@profile.show_visited_farms? %>
 
-  <%= f.fields_for :farmie_pictures, FarmiePicture.new do |ff| %>
-     <div class="field">
-       <%= ff.label :image_path %><br>
-       <%= ff.file_field :image_path, multiple: :true, accept: 'image/jpeg,image/gif,image/png', name: "profile[farmie_pictures_attributes][][image_path]" %>
-       <%#= ff.hidden_field :farmie_id, value: @farmie.id %>
-     </div>
-   <% end %>
-
-      <%= f.submit "Update profile" %>
+  <%= f.submit "Update profile" %>
   <% end %>

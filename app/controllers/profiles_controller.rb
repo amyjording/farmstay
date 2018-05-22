@@ -29,5 +29,3 @@
         
 		end
 	end
-
-  #post_attachments_attributes: ["avatar", "@original_filename", "@content_type", "@headers", "_destroy", "id"])

@@ -15,7 +15,3 @@
 		<% else %>
 			<p>Not showing visited farms</p>
 		<% end %>
-		<% @farmie.profile.farmie_pictures.each do |p| %>
-		  <%= image_tag p.image_path %>
-		  <%= link_to "Edit Picture", edit_farmie_profile_path(p) %>
-		<% end %>

@@ -13,7 +13,6 @@ require 'pundit/rspec'
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
-  #config.include ActionDispatch::TestProcess
 
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
@@ -30,13 +29,6 @@ RSpec.configure do |config|
   config.before(:each) do
     DatabaseCleaner.clean
   end
-
- # config.after(:each) do
- #   if Rails.env.test? || Rails.env.cucumber?
- #     FileUtils.rm_rf(Dir["#{Rails.root}/spec/fixtures"])
- #   end
- # end
-  include ActionDispatch::TestProcess
   
   config.include SimpleBdd, type: :feature
 

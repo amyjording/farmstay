@@ -7,8 +7,8 @@ FactoryBot.define do
   end
 end
 
-#FactoryBot.define do
-#  factory :picture, parent: :profile do
-#    picture File.open(File.join(Rails.root, 'spec', 'fixtures', 'files', 'profile_pic.jpg'))
-#  end
-# end
+FactoryBot.define do
+  factory :picture, parent: :profile do
+    picture File.open(File.join(Rails.root, 'spec', 'fixtures', 'files', 'profile_pic.jpg'))
+  end
+ end

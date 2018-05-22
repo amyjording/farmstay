@@ -18,3 +18,7 @@ if Rails.env.production?
     config.fog_directory     =  ENV['aws_bucket']
   end
 end
+
+CarrierWave.configure do |config|
+  config.asset_host = ActionController::Base.asset_host
+end 

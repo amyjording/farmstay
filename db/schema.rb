@@ -14,15 +14,6 @@ ActiveRecord::Schema.define(version: 20180512011436) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  enable_extension "btree_gin"
-
-  create_table "farmie_pictures", force: :cascade do |t|
-    t.integer "profile_id"
-    t.integer "farmie_id"
-    t.string "image_path"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "farmies", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -55,8 +46,6 @@ ActiveRecord::Schema.define(version: 20180512011436) do
     t.boolean "show_visited_farms", default: false
     t.string "picture"
     t.string "anonymous_picture", default: "farmer-penguin.jpg"
-    t.text "farm_pictures", default: [], array: true
-    t.index ["farm_pictures"], name: "index_profiles_on_farm_pictures", using: :gin
   end
 
 end
