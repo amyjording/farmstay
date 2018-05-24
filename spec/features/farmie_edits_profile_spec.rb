@@ -28,7 +28,7 @@ feature "farmie profiles" do
 		fill_in "profile[about]", with: Faker::Lorem.paragraph(2, true, 4)
 		choose "Yes"
     click_button "Update profile"
-    expect(farmie.profile).to have_attributes(picture: "profile_pic.jpg")
+    expect(farmie.profile.picture).not_to eq nil
 		expect(page).to have_content("Profile updated")
 		profile = Profile.last
 		expect(profile.show_visited_farms).to eq true
