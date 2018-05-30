@@ -106,19 +106,14 @@ $navbar-default-bg: #E0FFFF !default;
   border-color: #e9f6f6;
 }
 
-#logo {
-  float: left;
-  margin-left: 10px;
-  font-family: 'Work Sans', sans-serif;
-  font-size: 2em;
-  color: olive;
-  letter-spacing: -1px;
-  padding-top: 5px;
-  &:hover {
-    color: darkolivegreen;
-    text-decoration: none;
-  }
+.navbar-default .navbar-brand {
+    color: olive;
 }
+
+.navbar-brand {
+    font-size: 25px;
+    line-height: 35px;
+  }
 
 /* sidebar */
 
