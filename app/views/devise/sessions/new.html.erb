@@ -1,3 +1,5 @@
+<% provide(:title, "Log in") %>
+
 <h2>Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -13,7 +15,7 @@
 
   <% if devise_mapping.rememberable? -%>
     <div class="field">
-      <%= f.check_box :remember_me %>
+      <div style="float: left;"><%= f.check_box :remember_me %>&nbsp; &nbsp;</div>
       <%= f.label :remember_me %>
     </div>
   <% end -%>

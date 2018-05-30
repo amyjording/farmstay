@@ -19,8 +19,9 @@ feature "farmie profiles" do
     uploader.remove!
   end
 
-	scenario "farmie edits their profile" do
+	scenario "farmie edits their profile", js: true do
 		visit edit_farmie_profile_path(farmie, 1)
+    binding.pry
 		expect(page).to have_css("img[src*='farmer-penguin']")
     uploader
     fill_in "profile[name]", with: Faker::Name.initials(2)

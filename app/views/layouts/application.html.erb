@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Farm Stay</title>
+    <title><%= full_title (yield(:title)) %></title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= render 'layouts/shim' %>
   </head>
-
   <body>
-  	<p class="notice"><%= notice %></p>
-  	<p class="alert"><%= alert %></p>
-    <% if farmie_signed_in? %>
-      <li>
-        <%= link_to('Sign out', destroy_farmie_session_path, method: :delete) %>        
-      </li>
-    <% else %>
-      <li>
-        <%= link_to('Sign in', new_farmie_session_path) %>
-        <%= link_to('Join Farm Stay!', new_farmie_registration_path) %>
-      </li>
-    <% end %>
-    <%= yield %>
+    <%= render 'layouts/header' %>
+    <div class="container">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+
+      <div class="col-xs-12 col-sm-6 col-sm-push-3 col-md-6 col-md-push-3">
+      <%= yield %>
+      </div>
+      </div>
+      <%= render 'layouts/footer' %>
+      <%= debug(params) if Rails.env.development? %>
+    </div>
   </body>
 </html>

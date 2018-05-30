@@ -1,3 +1,5 @@
+<% provide(:title, "#{@farmie.first_name}'s Profile") %>
+
       <% flash.each do |message_type, message| %>
         <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
 			<% end %>
@@ -5,7 +7,7 @@
       	<% "#{@farmie.first_name}'s Profile" %>
       </h1>
 
-        <%= @profile.picture? ? image_tag(@profile.picture.url) : image_tag("farmer-penguin.jpg", size: 50) %>
+         <%= @profile.picture? ? image_tag(@profile.picture.url, class: 'profile-picture') : image_tag("farmer-penguin.jpg", size: 50, class: 'profile-picture') %>
         <%= @farmie.first_name + @farmie.last_name[0] + "." %>
 		<%= @profile.intro %>
 		<%= @profile.about %>
