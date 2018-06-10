@@ -21,6 +21,14 @@ test:
   <<: *default
   database: postgresql://farmstay_test
 
-production:
+staging:
   <<: *default
-  database: db/farmstay_production
+  database: farmstay_staging
+  username: deploy
+  password: <%= ENV["DATABASE_PASSWORD"] %>
+
+production:
+  <: *default
+  database: farmstay_production
+  username: deploy
+  password: <%= ENV["DATABASE_PASSWORD"] %>

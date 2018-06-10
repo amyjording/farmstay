@@ -89,7 +89,7 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-    ActionMailer::Base.smtp_settings = {
+  ActionMailer::Base.smtp_settings = {
     address:              'smpt.sendgrid.net',
     domain:               'amyjording.com',
     user_name:            ENV["EMAILUSERNAME"],
