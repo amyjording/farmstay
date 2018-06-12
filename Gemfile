@@ -13,6 +13,7 @@ gem 'devise'
 gem 'pundit'
 gem 'omniauth-instagram'
 gem 'omniauth-facebook'
+gem 'therubyracer', platforms: :ruby
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
