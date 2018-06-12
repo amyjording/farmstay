@@ -4,8 +4,12 @@ lock "~> 3.10.1"
 set :application, "farmstay"
 set :repo_url, "git@github.com:amyjording/farmstay.git"
 
-set :user, "deply"
+set :user, "deploy"
 set :stages, %w(production staging)
+
+set :ssh_options, {
+  keys: ["C:\Users\ADMIN\.ssh/id_rsa"]
+}
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp

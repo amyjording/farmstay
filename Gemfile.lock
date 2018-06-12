@@ -60,6 +60,7 @@ GEM
       aws-sdk-kms (~> 1)
       aws-sigv4 (~> 1.0)
     aws-sigv4 (1.0.2)
+    bcrypt (3.1.11)
     bcrypt (3.1.11-x86-mingw32)
     better_errors (2.4.0)
       coderay (>= 1.0.0)
@@ -136,6 +137,7 @@ GEM
       i18n (>= 0.7)
     faraday (0.12.2)
       multipart-post (>= 1.2, < 3)
+    ffi (1.9.23)
     ffi (1.9.23-x86-mingw32)
     fog-aws (3.0.0)
       fog-core (~> 2.1)
@@ -193,6 +195,8 @@ GEM
       net-ssh (>= 2.6.5)
     net-ssh (4.2.0)
     nio4r (2.3.1)
+    nokogiri (1.8.2)
+      mini_portile2 (~> 2.3.0)
     nokogiri (1.8.2-x86-mingw32)
       mini_portile2 (~> 2.3.0)
     oauth2 (1.4.0)
@@ -213,6 +217,7 @@ GEM
       oauth2 (~> 1.1)
       omniauth (~> 1.2)
     orm_adapter (0.5.0)
+    pg (1.0.0)
     pg (1.0.0-x86-mingw32)
     pry (0.10.4)
       coderay (~> 1.1.0)
@@ -339,7 +344,9 @@ GEM
       nokogiri (~> 1.8)
 
 PLATFORMS
+  ruby
   x86-mingw32
+  x86_64-linux
 
 DEPENDENCIES
   aws-sdk-s3
