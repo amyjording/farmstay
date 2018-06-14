@@ -5,9 +5,9 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-ruby "2.3.3"
+ruby "2.4.4"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.5'
+gem 'rails', '~> 5.2.0'
 gem 'pg'
 gem 'devise'
 gem 'pundit'
@@ -18,7 +18,7 @@ gem 'therubyracer', platforms: :ruby
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
 gem 'bootstrap-sass', '3.3.6'
-gem 'sass-rails', '~> 5.0'
+gem 'sass-rails', '~> 5.0', '>= 5.0.4'
 gem 'jquery-rails'
 
 # Use Uglifier as compressor for JavaScript assets
@@ -31,7 +31,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
-gem 'bcrypt', '3.1.11'
+gem 'bcrypt', '3.1.12'
 #gem 'webdrivers', '~> 3.0'
 
 gem "shrine", "~> 2.0"
