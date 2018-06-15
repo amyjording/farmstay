@@ -1,3 +1,6 @@
+require 'carrierwave/storage/abstract'
+require 'carrierwave/storage/file'
+require 'carrierwave/storage/fog'
 
 if Rails.env.test? or Rails.env.cucumber?
   CarrierWave.configure do |config|
@@ -8,6 +11,8 @@ end
 
 if Rails.env.production?
   CarrierWave.configure do |config|
+    config.storage :fog
+    config.fog_provider = 'fog/aws'
     config.fog_credentials = {
       # Configuration for Amazon S3
       :provider              => 'AWS',
