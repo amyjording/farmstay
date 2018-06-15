@@ -38,8 +38,7 @@ gem "shrine", "~> 2.0"
 gem 'carrierwave', '1.2.2'
 gem 'mini_magick', '4.7.0'
 gem "aws-sdk-s3"
-# Use Capistrano for deployment
-# gem 'capistrano-rails'
+gem 'figaro'
 
 group :development, :test do
   gem 'better_errors'
