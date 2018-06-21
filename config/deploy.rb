@@ -7,9 +7,7 @@ set :repo_url, "git@github.com:amyjording/farmstay.git"
 set :user, "deploy"
 set :stages, %w(production staging)
 
-set :ssh_options, {
-  keys: ["C:\Users\ADMIN\.ssh/id_rsa"]
-}
+set :linked_files, %w{config/application.yml}
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
