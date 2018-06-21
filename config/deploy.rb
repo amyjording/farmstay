@@ -7,8 +7,8 @@ set :repo_url, "git@github.com:amyjording/farmstay.git"
 set :user, "deploy"
 set :stages, %w(production staging)
 
-set :linked_files, %w{config/application.yml}
-
+# set :linked_files, %w{config/application.yml}
+append :linked_files, 'config/database.yml', 'config/application.yml'
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
