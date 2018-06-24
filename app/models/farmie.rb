@@ -3,7 +3,7 @@ class Farmie < ApplicationRecord
   has_one :profile
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, 
-         :omniauthable, omniauth_providers: [:facebook, :twitter]
+         :omniauthable, omniauth_providers: [:facebook]
   after_create :build_profile
          
   validates_presence_of :first_name, :last_name
