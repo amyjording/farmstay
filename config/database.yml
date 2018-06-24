@@ -28,7 +28,7 @@ staging:
   password: <%= ENV["DATABASE_PASSWORD"] %>
 
 production:
- <<: *default
+  <<: *default
   database: farmstay_production
   username: deploy
   password: <%= ENV["DATABASE_PASSWORD"] %>
