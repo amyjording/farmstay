@@ -59,6 +59,7 @@ group :development, :test do
   gem 'capistrano', '~> 3.10.1'
   gem 'capistrano-rails'
   gem 'capistrano-passenger'
+  gem 'capistrano-secrets-yml', '~> 1.1.0'
   gem 'capistrano-figaro-yml', '~> 1.0.2'
   gem 'rails-controller-testing'
 end

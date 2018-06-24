@@ -33,6 +33,7 @@ require "capistrano/rails/assets"
 require "capistrano/rails/migrations"
 require "capistrano/passenger"
 require "capistrano/figaro_yml"
+require 'capistrano/secrets_yml'
 
 set :passenger_restart_with_touch, true
 # Load custom tasks from `lib/capistrano/tasks` if you have any defined
